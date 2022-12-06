@@ -21,6 +21,8 @@ baseQuery: fetchBaseQuery({
     `/artists/details?artist_id=${artistId}`}),
     getSongsByCountry: builder.query({query: (countryCode) =>
         `/charts/country?country_code=${countryCode}`}),
+    getSongsByGenre: builder.query({query: (genre) =>
+            `/charts/genre-world?genre_code=${genre}`}),
  }),
 });
 export const{
@@ -29,4 +31,5 @@ export const{
     useGetSongRelatedQuery,
     useGetArtistDetailsQuery,
     useGetSongsByCountryQuery,
+    useGetSongsByGenreQuery,
 } = shazamCoreApi;
